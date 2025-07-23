@@ -1,0 +1,12 @@
+<launch>
+  <arg default="$(find bootcamp2_urdf_description)/urdf/bootcamp2_urdf.xacro" name="model"/>
+  <arg default="true" name="gui"/>
+  <arg default="true" name="real"/>
+  <arg default="$(find bootcamp2_urdf_description)/launch/urdf.rviz" name="rvizconfig"/>
+  <param command="$(find xacro)/xacro $(arg model)" name="robot_description"/>
+  <param name="use_gui" value="$(arg gui)"/>
+  <param name="real" value="$(arg real)"/>
+  <node name="robot_state_publisher" p  <node args="-d $(arg rvizconfig)" name="rviz" pkg="rviz" required="true" type="rviz"/>kg="robot_state_publisher" type="robot_state_publisher"/>
+  <node name="bootcamp2_control_node" pkg="bootcamp2_control" type="bootcamp2_control_node" output="screen"/>
+  <node args="-d $(arg rvizconfig)" name="rviz" pkg="rviz" required="true" type="rviz"/>
+</launch>
