@@ -19,7 +19,7 @@ link_directories(
 )
 
 install(DIRECTORY
-  launch rviz meshes urdf
+  launch meshes urdf
   DESTINATION share/${PROJECT_NAME}
 )
 
