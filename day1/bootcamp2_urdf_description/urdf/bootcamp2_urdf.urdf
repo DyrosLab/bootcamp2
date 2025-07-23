@@ -1,0 +1,228 @@
+<?xml version="1.0" ?>
+<robot name="bootcamp2_urdf" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find bootcamp2_urdf_description)/urdf/materials.xacro" />
+  <xacro:include filename="$(find bootcamp2_urdf_description)/urdf/bootcamp2_urdf.trans" />
+  <xacro:include filename="$(find bootcamp2_urdf_description)/urdf/bootcamp2_urdf.gazebo" />
+  <link name="base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="1.0468689086316864e-15 -0.01005117119901429 -0.01889382505663183"/>
+      <mass value="0.6084622831710841"/>
+      <inertia ixx="0.000302" ixy="0.0" ixz="-0.0" iyy="0.000194" iyz="4e-06" izz="0.000235"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://bootcamp2_urdf_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://bootcamp2_urdf_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="Rev1" type="revolute">
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.002"/>
+    <parent link="base_link"/>
+    <child link="L1_1"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <limit effort="30" velocity="1" lower="-1.5708" upper="1.5708"/>
+  </joint>
+
+  <link name="L1_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.000434457203252145 -8.875446045327528e-07 0.041187741071427475"/>
+      <mass value="0.7153878617187012"/>
+      <inertia ixx="0.00032" ixy="-0.0" ixz="-7e-06" iyy="0.000334" iyz="0.0" izz="0.000191"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.002"/>
+      <geometry>
+        <mesh filename="package://bootcamp2_urdf_description/meshes/L1_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.002"/>
+      <geometry>
+        <mesh filename="package://bootcamp2_urdf_description/meshes/L1_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="Rev2" type="revolute">
+    <origin rpy="0 0 0" xyz="0.019 0.0 0.053"/>
+    <parent link="L1_1"/>
+    <child link="L2_1"/>
+    <axis xyz="1.0 -0.0 0.0"/>
+    <limit effort="30" velocity="1" lower="-1.57" upper="1.57"/>
+  </joint>
+
+  <link name="L2_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.029110558433872374 -0.007338049207632742 -0.024068613589330035"/>
+      <mass value="0.8808688410419647"/>
+      <inertia ixx="0.001094" ixy="1.2e-05" ixz="4e-05" iyy="0.001003" iyz="-0.000184" izz="0.000422"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.019 -0.0 -0.055"/>
+      <geometry>
+        <mesh filename="package://bootcamp2_urdf_description/meshes/L2_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.019 -0.0 -0.055"/>
+      <geometry>
+        <mesh filename="package://bootcamp2_urdf_description/meshes/L2_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="Rev3" type="revolute">
+    <origin rpy="0 0 0" xyz="0.031 0.0 0.03"/>
+    <parent link="L2_1"/>
+    <child link="L3_1"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <limit effort="30" velocity="1" lower="-1.57" upper="1.57"/>
+  </joint>
+
+  <link name="L3_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00041901831427814534 2.7229956227561273e-06 0.04237196590892835"/>
+      <mass value="0.4933419484022612"/>
+      <inertia ixx="0.000318" ixy="0.0" ixz="-3e-06" iyy="0.000316" iyz="0.0" izz="0.000101"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.05 -0.0 -0.085"/>
+      <geometry>
+        <mesh filename="package://bootcamp2_urdf_description/meshes/L3_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.05 -0.0 -0.085"/>
+      <geometry>
+        <mesh filename="package://bootcamp2_urdf_description/meshes/L3_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="Rev4" type="revolute">
+    <origin rpy="0 0 0" xyz="0.019 0.0 0.067"/>
+    <parent link="L3_1"/>
+    <child link="L4_1"/>
+    <axis xyz="1.0 0.0 -0.0"/>
+    <limit effort="30" velocity="1" lower="-1.57" upper="1.57"/>
+  </joint>
+
+  <link name="L4_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.018556942953716613 -8.385987963903694e-08 0.07291871869136765"/>
+      <mass value="0.48111084773021945"/>
+      <inertia ixx="0.000453" ixy="0.0" ixz="-3e-06" iyy="0.00047" iyz="-0.0" izz="0.000107"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.069 -0.0 -0.152"/>
+      <geometry>
+        <mesh filename="package://bootcamp2_urdf_description/meshes/L4_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.069 -0.0 -0.152"/>
+      <geometry>
+        <mesh filename="package://bootcamp2_urdf_description/meshes/L4_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="Rev5" type="revolute">
+    <origin rpy="0 0 0" xyz="0.0 -0.0 0.1"/>
+    <parent link="L4_1"/>
+    <child link="L5_1"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <limit effort="30" velocity="1" lower="-1.57" upper="1.57"/>
+  </joint>
+
+  <link name="L5_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.019000039220678028 -0.011491339607441588 0.0384485271379999"/>
+      <mass value="0.4379098546328849"/>
+      <inertia ixx="0.000173" ixy="-0.0" ixz="-0.0" iyy="0.000159" iyz="8e-06" izz="0.000135"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.069 0.0 -0.252"/>
+      <geometry>
+        <mesh filename="package://bootcamp2_urdf_description/meshes/L5_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.069 0.0 -0.252"/>
+      <geometry>
+        <mesh filename="package://bootcamp2_urdf_description/meshes/L5_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="Rev6" type="revolute">
+    <origin rpy="0 0 0" xyz="-0.019 0.0 0.062"/>
+    <parent link="L5_1"/>
+    <child link="L6_1"/>
+    <axis xyz="-0.0 -0.0 1.0"/>
+    <limit effort="30" velocity="1" lower="-1.57" upper="1.57"/>
+  </joint>
+
+  <link name="L6_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0008777382830928229 0.0008777375312018252 0.010202499313032687"/>
+      <mass value="0.024943813438644116"/>
+      <inertia ixx="2e-06" ixy="0.0" ixz="-0.0" iyy="2e-06" iyz="-0.0" izz="1e-06"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.05 -0.0 -0.314"/>
+      <geometry>
+        <mesh filename="package://bootcamp2_urdf_description/meshes/L6_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.05 -0.0 -0.314"/>
+      <geometry>
+        <mesh filename="package://bootcamp2_urdf_description/meshes/L6_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="Rigid7" type="fixed">
+    <origin rpy="0 0 0" xyz="0.0 -0.0 0.0155"/>
+    <parent link="L6_1"/>
+    <child link="LE_1"/>
+  </joint>
+
+  <link name="LE_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="1.0408340855860843e-16 -8.148944305400928e-15 6.661338147750939e-16"/>
+      <mass value="0.007102512671235806"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.05 0.0 -0.3295"/>
+      <geometry>
+        <mesh filename="package://bootcamp2_urdf_description/meshes/LE_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.05 0.0 -0.3295"/>
+      <geometry>
+        <mesh filename="package://bootcamp2_urdf_description/meshes/LE_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

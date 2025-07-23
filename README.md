@@ -1,7 +1,7 @@
 # DYROS bootcamp2
 This project contains code from the DYROS Bootcamp2.
 
-If you would like to contribute to this project, feel free to submit a pull request or contact me at hkleetony at snu.ac.kr.
+If you would like to contribute to this project, feel free to submit a pull request or contact to hkleetony at snu.ac.kr.
 
 # TODO
 - [ ] Add user authentication

@@ -1,0 +1,48 @@
+<mujoco model="bootcamp2_urdf">
+    <compiler angle="radian" meshdir="../meshes/" balanceinertia="true"/>
+    <size njmax="500" nconmax="100" />
+    <asset>
+        <mesh name="base_link" file="base_link.stl" scale="0.001 0.001 0.001" />
+        <mesh name="L1_1" file="L1_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="L2_1" file="L2_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="L3_1" file="L3_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="L4_1" file="L4_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="L5_1" file="L5_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="L6_1" file="L6_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="LE_1" file="LE_1.stl" scale="0.001 0.001 0.001" />
+    </asset>
+    <worldbody>
+        <geom type="mesh" mesh="base_link" />
+        <body name="L1_1" pos="0 0 0.002">
+            <inertial pos="0.000434457 -8.87545e-07 0.0411877" quat="0.706849 0.0191079 0.0191079 0.706849" mass="0.715388" diaginertia="0.000334 0.000320379 0.000190621" />
+            <joint name="Rev1" pos="0 0 0" axis="0 0 1" />
+            <geom pos="0 0 -0.002" type="mesh" mesh="L1_1" />
+            <body name="L2_1" pos="0.019 0 0.053">
+                <inertial pos="0.0291106 -0.00733805 -0.0240686" quat="0.989615 -0.140776 -0.0276995 0.00874707" mass="0.880869" diaginertia="0.0010964 0.00105637 0.000366234" />
+                <joint name="Rev2" pos="0 0 0" axis="1 0 0" />
+                <geom pos="-0.019 0 -0.055" type="mesh" mesh="L2_1" />
+                <body name="L3_1" pos="0.031 0 0.03">
+                    <inertial pos="0.000419018 2.723e-06 0.042372" quat="0.999976 0 0.00691063 0" mass="0.493342" diaginertia="0.000318041 0.000316 0.000100959" />
+                    <joint name="Rev3" pos="0 0 0" axis="0 0 -1" />
+                    <geom pos="-0.05 0 -0.085" type="mesh" mesh="L3_1" />
+                    <body name="L4_1" pos="0.019 0 0.067">
+                        <inertial pos="-0.0185569 -8.38599e-08 0.0729187" quat="0.7071 0.00306518 0.00306518 0.7071" mass="0.481111" diaginertia="0.00047 0.000453026 0.000106974" />
+                        <joint name="Rev4" pos="0 0 0" axis="1 0 0" />
+                        <geom pos="-0.069 0 -0.152" type="mesh" mesh="L4_1" />
+                        <body name="L5_1" pos="0 0 0.1">
+                            <inertial pos="-0.019 -0.0114913 0.0384485" quat="0.989215 0.146472 0 0" mass="0.43791" diaginertia="0.000173 0.000161422 0.000132578" />
+                            <joint name="Rev5" pos="0 0 0" axis="1 0 0" />
+                            <geom pos="-0.069 0 -0.252" type="mesh" mesh="L5_1" />
+                            <body name="L6_1" pos="-0.019 0 0.062">
+                                <inertial pos="0.000683203 0.000683202 0.0113766" quat="0.382636 -0.00605809 -0.0146255 0.923764" mass="0.0320463" diaginertia="2.16366e-06 2.1563e-06 1.00737e-06" />
+                                <joint name="Rev6" pos="0 0 0" axis="0 0 1" />
+                                <geom pos="-0.05 0 -0.314" type="mesh" mesh="L6_1" />
+                                <geom pos="-0.05 0 -0.314" type="mesh" mesh="LE_1" />
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+</mujoco>
