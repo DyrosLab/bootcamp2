@@ -80,6 +80,10 @@ Vector6d Q_init, Q_dot;
 Vector6d Q_;
 Vector6d Q_desired, pulse_desired;
 Vector6d x_dot, x_init, x_desired;
+Eigen::Matrix3d R_init;
+Eigen::Vector3d x_target;
+Eigen::Vector3d x_err;
+Eigen::Vector3d x_dot_clik;  // feedforward
 int tick = 0;
 int tick_init = 0;
 double trajectory_time;
