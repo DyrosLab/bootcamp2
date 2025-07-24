@@ -31,12 +31,10 @@ void compute_once(
   pinocchio::updateFramePlacements(model, data);
   // 3) 프레임 원점에서의 6D Jacobian (WORLD 기준)
   pinocchio::computeFrameJacobian(model, data, q, fid, pinocchio::ReferenceFrame::WORLD, J6);
-
   // 4) 프레임 placement (W_T_F)
   const pinocchio::SE3 &oMf = data.oMf[fid];
   end_eff = oMf.translation();  // 프레임 원점 위치 (월드 기준)
 
-  // 출력
   std::cout << "\n=== Jacobian 6D @ frame origin (angular; linear) ===" << std::endl;
   std::cout << J6 << std::endl;
 
@@ -90,7 +88,6 @@ int main(int argc, char* argv[])
   q.setRandom();
   std::cout << "\n=== Random q ===\n" << q.transpose() << std::endl;
 
-  // 초기 1회 계산
   compute_once(q, model, data, fid);
 
   while (rclcpp::ok())
